@@ -1,0 +1,74 @@
+.home-title {
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.home-last-scan-card {
+  margin: 16px;
+}
+
+.home-last-scan-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.home-last-scan-level {
+  font-weight: 600;
+}
+
+.home-last-scan-time {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.home-last-scan-summary {
+  margin: 4px 0 0;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+}
+
+.home-scan-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 60vh;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.home-scan-button {
+  width: 120px;
+  height: 120px;
+  min-width: 120px;
+  min-height: 120px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.home-scan-button ion-icon {
+  color: #ffffff;
+  font-size: 48px;
+}
+
+.home-scan-label {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.home-scan-hint {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  max-width: 260px;
+  margin: 0;
+}
