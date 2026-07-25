@@ -1,0 +1,212 @@
+.learn-header-dark {
+  --background: #1a1a2e;
+}
+
+.learn-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+}
+
+.learn-header-left ion-icon {
+  font-size: 20px;
+}
+
+.learn-header-left span {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.learn-header-search-button {
+  background: none;
+  border: none;
+  padding: 0 16px;
+  color: #ffffff;
+}
+
+.learn-header-search-button ion-icon {
+  font-size: 20px;
+}
+
+.learn-content {
+  --background: var(--color-background);
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+}
+
+.learn-page-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.learn-page-subtitle {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin: 4px 0 0;
+}
+
+.learn-searchbar {
+  margin-top: 12px;
+  --background: #ffffff;
+  --border-radius: 12px;
+  padding: 0;
+}
+
+.learn-category-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.learn-category-card {
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.learn-category-icon-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.learn-category-icon-circle ion-icon {
+  font-size: 28px;
+}
+
+.learn-category-label {
+  font-weight: 700;
+  font-size: 13px;
+  text-align: center;
+  margin: 8px 0 0;
+}
+
+.learn-category-card.primary {
+  background: var(--color-primary);
+}
+
+.learn-category-card.primary .learn-category-icon-circle {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.learn-category-card.primary .learn-category-icon-circle ion-icon,
+.learn-category-card.primary .learn-category-label {
+  color: #ffffff;
+}
+
+.learn-category-card.danger {
+  background: #fef2f2;
+}
+
+.learn-category-card.danger .learn-category-icon-circle {
+  background: rgba(224, 36, 36, 0.1);
+}
+
+.learn-category-card.danger .learn-category-icon-circle ion-icon,
+.learn-category-card.danger .learn-category-label {
+  color: var(--color-danger);
+}
+
+.learn-category-card.safe {
+  background: #f0fdf4;
+}
+
+.learn-category-card.safe .learn-category-icon-circle {
+  background: rgba(5, 122, 85, 0.1);
+}
+
+.learn-category-card.safe .learn-category-icon-circle ion-icon,
+.learn-category-card.safe .learn-category-label {
+  color: #057a55;
+}
+
+.learn-faq-heading {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 24px 0 12px;
+}
+
+.learn-faq-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.learn-faq-icon-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.learn-faq-icon-circle ion-icon {
+  font-size: 20px;
+}
+
+.learn-faq-icon-circle.orange {
+  background: #fff7ed;
+}
+
+.learn-faq-icon-circle.orange ion-icon {
+  color: #ea580c;
+}
+
+.learn-faq-icon-circle.blue {
+  background: rgba(26, 86, 219, 0.1);
+}
+
+.learn-faq-icon-circle.blue ion-icon {
+  color: var(--color-primary);
+}
+
+.learn-faq-icon-circle.grey {
+  background: var(--color-border);
+}
+
+.learn-faq-icon-circle.grey ion-icon {
+  color: var(--color-text-secondary);
+}
+
+.learn-faq-icon-circle.purple {
+  background: #f5f3ff;
+}
+
+.learn-faq-icon-circle.purple ion-icon {
+  color: #7c3aed;
+}
+
+.learn-faq-question {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.learn-faq-row > ion-icon {
+  color: var(--color-text-secondary);
+  font-size: 18px;
+  flex-shrink: 0;
+}

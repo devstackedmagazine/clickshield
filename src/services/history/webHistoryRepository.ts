@@ -1,7 +1,7 @@
 import type {
-  HistoryEntry,
   HistoryRepository,
   SaveHistoryInput,
+  StoredHistoryEntry,
 } from '../../types/history.ts'
 import type { StorageLike } from '../guardian/guardianService.ts'
 import { inputAsText } from '../analysis/urlUtils.ts'
@@ -34,13 +34,13 @@ function previewFor(value: SaveHistoryInput): string {
   return inputAsText(value.input).trim().slice(0, 100)
 }
 
-function parseEntries(raw: string | null): HistoryEntry[] {
+function parseEntries(raw: string | null): StoredHistoryEntry[] {
   if (!raw) {
     return []
   }
   try {
     const value = JSON.parse(raw)
-    return Array.isArray(value) ? (value as HistoryEntry[]) : []
+    return Array.isArray(value) ? (value as StoredHistoryEntry[]) : []
   } catch {
     return []
   }
@@ -53,19 +53,19 @@ export class WebHistoryRepository implements HistoryRepository {
     this.#storage = storage
   }
 
-  #read(): HistoryEntry[] {
+  #read(): StoredHistoryEntry[] {
     return parseEntries(this.#storage.getItem(HISTORY_STORAGE_KEY))
   }
 
-  #write(entries: HistoryEntry[]): void {
+  #write(entries: StoredHistoryEntry[]): void {
     this.#storage.setItem(HISTORY_STORAGE_KEY, JSON.stringify(entries))
   }
 
-  async save(value: SaveHistoryInput): Promise<HistoryEntry> {
+  async save(value: SaveHistoryInput): Promise<StoredHistoryEntry> {
     const entries = this.#read()
     const nextId =
       entries.reduce((maximum, entry) => Math.max(maximum, entry.id), 0) + 1
-    const entry: HistoryEntry = {
+    const entry: StoredHistoryEntry = {
       id: nextId,
       scannedAt: value.result.scannedAt,
       screenshotPath: value.screenshotPath ?? null,
@@ -81,13 +81,13 @@ export class WebHistoryRepository implements HistoryRepository {
     return entry
   }
 
-  async list(limit = 100): Promise<HistoryEntry[]> {
+  async list(limit = 100): Promise<StoredHistoryEntry[]> {
     return this.#read()
       .sort((left, right) => right.scannedAt.localeCompare(left.scannedAt))
       .slice(0, Math.max(0, limit))
   }
 
-  async getById(id: number): Promise<HistoryEntry | null> {
+  async getById(id: number): Promise<StoredHistoryEntry | null> {
     return this.#read().find((entry) => entry.id === id) ?? null
   }
 

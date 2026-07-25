@@ -4,9 +4,9 @@ import {
   type SQLiteDBConnection,
 } from '@capacitor-community/sqlite'
 import type {
-  HistoryEntry,
   HistoryRepository,
   SaveHistoryInput,
+  StoredHistoryEntry,
 } from '../../types/history.ts'
 import type {
   InputType,
@@ -50,7 +50,7 @@ function previewFor(value: SaveHistoryInput): string {
     : inputAsText(value.input).trim().slice(0, 100)
 }
 
-function rowToEntry(row: ScanRow): HistoryEntry {
+function rowToEntry(row: ScanRow): StoredHistoryEntry {
   return {
     id: row.id,
     scannedAt: row.scanned_at,
@@ -94,7 +94,7 @@ export class SqliteHistoryRepository implements HistoryRepository {
     return this.#connection
   }
 
-  async save(value: SaveHistoryInput): Promise<HistoryEntry> {
+  async save(value: SaveHistoryInput): Promise<StoredHistoryEntry> {
     const database = await this.#database()
     const result = await database.run(
       `INSERT INTO scans (
@@ -124,7 +124,7 @@ export class SqliteHistoryRepository implements HistoryRepository {
     return entry
   }
 
-  async list(limit = 100): Promise<HistoryEntry[]> {
+  async list(limit = 100): Promise<StoredHistoryEntry[]> {
     const database = await this.#database()
     const result = await database.query(
       'SELECT * FROM scans ORDER BY scanned_at DESC LIMIT ?',
@@ -133,7 +133,7 @@ export class SqliteHistoryRepository implements HistoryRepository {
     return (result.values ?? []).map((row) => rowToEntry(row as ScanRow))
   }
 
-  async getById(id: number): Promise<HistoryEntry | null> {
+  async getById(id: number): Promise<StoredHistoryEntry | null> {
     const database = await this.#database()
     const result = await database.query(
       'SELECT * FROM scans WHERE id = ? LIMIT 1',

@@ -1,10 +1,12 @@
 import { describe, expect, it, vi } from 'vitest'
-import type { HistoryEntry } from '../../types/history.ts'
-import type { SaveHistoryInput } from '../../types/history.ts'
+import type {
+  SaveHistoryInput,
+  StoredHistoryEntry,
+} from '../../types/history.ts'
 import { analyzeLocally } from './localAnalyzer.ts'
 import { createScanService } from './scanService.ts'
 
-function historyEntry(value: SaveHistoryInput): HistoryEntry {
+function historyEntry(value: SaveHistoryInput): StoredHistoryEntry {
   return {
     id: 1,
     scannedAt: value.result.scannedAt,

@@ -1,8 +1,8 @@
 import { Capacitor } from '@capacitor/core'
 import type {
-  HistoryEntry,
   HistoryRepository,
   SaveHistoryInput,
+  StoredHistoryEntry,
 } from '../../types/history.ts'
 import { historyLock } from './historyLock.ts'
 import { WebHistoryRepository } from './webHistoryRepository.ts'
@@ -31,7 +31,7 @@ export function getHistoryRepository(): Promise<HistoryRepository> {
 
 export async function saveScanToHistory(
   value: SaveHistoryInput,
-): Promise<HistoryEntry> {
+): Promise<StoredHistoryEntry> {
   const repository = await getHistoryRepository()
   try {
     return await repository.save(value)
@@ -42,7 +42,9 @@ export async function saveScanToHistory(
   }
 }
 
-export async function listHistory(limit?: number): Promise<HistoryEntry[]> {
+export async function listHistory(
+  limit?: number,
+): Promise<StoredHistoryEntry[]> {
   historyLock.assertUnlocked()
   const repository = await getHistoryRepository()
   return repository.list(limit)
@@ -50,7 +52,7 @@ export async function listHistory(limit?: number): Promise<HistoryEntry[]> {
 
 export async function getHistoryEntry(
   id: number,
-): Promise<HistoryEntry | null> {
+): Promise<StoredHistoryEntry | null> {
   historyLock.assertUnlocked()
   const repository = await getHistoryRepository()
   return repository.getById(id)

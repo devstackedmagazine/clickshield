@@ -182,3 +182,24 @@
     border-right-color: var(--border);
   }
 }
+
+.tab-icon-outline {
+  display: block;
+}
+
+.tab-icon-filled {
+  display: none;
+}
+
+ion-tab-button.tab-selected .tab-icon-outline {
+  display: none;
+}
+
+ion-tab-button.tab-selected .tab-icon-filled {
+  display: block;
+}
+
+ion-tab-button ion-label {
+  font-size: 10px;
+  text-align: center;
+}

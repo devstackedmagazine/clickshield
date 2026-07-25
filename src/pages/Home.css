@@ -1,0 +1,300 @@
+.home-header {
+  --background: #ffffff;
+}
+
+.home-header-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.home-header-brand ion-icon {
+  color: var(--color-primary);
+  font-size: 20px;
+}
+
+.home-header-brand span {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--color-primary);
+}
+
+.home-header-settings-button {
+  background: none;
+  border: none;
+  padding: 0 16px;
+  color: var(--color-text-secondary);
+}
+
+.home-header-settings-button ion-icon {
+  font-size: 22px;
+}
+
+.home-content {
+  --background: var(--color-background);
+}
+
+/* Section 1 — Score card */
+.home-score-card {
+  background: var(--color-surface);
+  border-radius: 20px;
+  margin: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-score-ring {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-score-number {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.home-score-label {
+  font-size: 10px;
+  color: var(--color-text-secondary);
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+.home-score-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  text-align: center;
+  margin: 12px 0 0;
+}
+
+.home-score-subtitle {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin: 2px 0 0;
+}
+
+.home-active-protection-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #dcfce7;
+  border-radius: 999px;
+  padding: 6px 14px;
+  margin-top: 12px;
+}
+
+.home-active-protection-badge ion-icon {
+  color: #166534;
+  font-size: 14px;
+}
+
+.home-active-protection-badge span {
+  color: #166534;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Section 2 — Action cards */
+.home-action-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 16px 16px 0;
+}
+
+.home-action-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 16px;
+  cursor: pointer;
+}
+
+.home-action-icon-square {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: rgba(26, 86, 219, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-action-icon-square ion-icon {
+  color: var(--color-primary);
+  font-size: 28px;
+}
+
+.home-action-title {
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--color-text-primary);
+  margin: 10px 0 0;
+}
+
+.home-action-description {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  margin: 2px 0 0;
+}
+
+/* Section 3 — Guardian Controls */
+.home-guardian-card {
+  background: var(--color-surface);
+  border-radius: 20px;
+  margin: 16px;
+  padding: 20px;
+}
+
+.home-guardian-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.home-guardian-header ion-icon {
+  color: var(--color-primary);
+  font-size: 18px;
+}
+
+.home-guardian-header span {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--color-primary);
+}
+
+.home-guardian-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 8px 0 0;
+}
+
+.home-guardian-description {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  margin: 4px 0 0;
+}
+
+.home-guardian-illustration {
+  width: 100%;
+  height: 80px;
+  background: rgba(26, 86, 219, 0.06);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.home-guardian-illustration ion-icon {
+  color: var(--color-primary);
+  font-size: 32px;
+}
+
+.home-guardian-button {
+  width: 100%;
+  height: 48px;
+  border-radius: 999px;
+  border: none;
+  background: var(--color-primary);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 15px;
+  margin-top: 16px;
+}
+
+/* Section 4 — Recent Activity */
+.home-recent-activity-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 16px 16px 8px;
+}
+
+.home-recent-activity-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.home-recent-activity-view-all {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 13px;
+  color: var(--color-primary);
+}
+
+.home-activity-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 14px;
+  margin: 0 16px 8px;
+  cursor: pointer;
+}
+
+.home-activity-icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.home-activity-icon-circle ion-icon {
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.home-activity-icon-circle.blocked,
+.home-activity-icon-circle.highRisk {
+  background: var(--color-danger);
+}
+
+.home-activity-icon-circle.caution {
+  background: var(--color-warning);
+}
+
+.home-activity-icon-circle.noKnownRisk {
+  background: var(--color-primary);
+}
+
+.home-activity-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.home-activity-name {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.home-activity-meta {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  margin: 2px 0 0;
+}
