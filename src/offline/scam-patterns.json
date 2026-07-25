@@ -1,0 +1,344 @@
+{
+  "version": "1.0.0",
+  "blacklist": {
+    "domains": [
+      "bank-al.com",
+      "raiffeisen-al.net",
+      "scam-demo.clickshield.test"
+    ],
+    "urls": []
+  },
+  "languages": {
+    "sq": {
+      "urgencyPhrases": [
+        "urgjent",
+        "vepro tani",
+        "veproni tani",
+        "llogaria juaj do të bllokohet",
+        "paralajmërimi i fundit",
+        "brenda 24 orësh"
+      ],
+      "paymentPhrases": [
+        "dërgoni para",
+        "transferoni",
+        "paguani menjëherë",
+        "tarifë përpunimi"
+      ],
+      "credentialPhrases": [
+        "pin kodi",
+        "pin-in tuaj",
+        "fjalëkalimi",
+        "numri i kartës",
+        "verifikoni llogarinë"
+      ],
+      "prizePhrases": [
+        "çmim i fituar",
+        "keni fituar",
+        "merrni shpërblimin"
+      ],
+      "weights": {
+        "urgency": 25,
+        "payment": 30,
+        "credential": 35,
+        "prize": 20
+      }
+    },
+    "en": {
+      "urgencyPhrases": [
+        "urgent",
+        "act now",
+        "your account will be closed",
+        "final warning",
+        "within 24 hours"
+      ],
+      "paymentPhrases": [
+        "send money",
+        "transfer funds",
+        "pay immediately",
+        "processing fee"
+      ],
+      "credentialPhrases": [
+        "pin code",
+        "password",
+        "card number",
+        "verify your account",
+        "security code"
+      ],
+      "prizePhrases": [
+        "you have won",
+        "claim your prize",
+        "selected for a special offer"
+      ],
+      "weights": {
+        "urgency": 25,
+        "payment": 30,
+        "credential": 35,
+        "prize": 20
+      }
+    },
+    "tr": {
+      "urgencyPhrases": [
+        "acil",
+        "şimdi harekete geçin",
+        "hesabınız kapatılacak",
+        "son uyarı",
+        "24 saat içinde"
+      ],
+      "paymentPhrases": [
+        "para gönderin",
+        "para transferi yapın",
+        "hemen ödeyin",
+        "işlem ücreti"
+      ],
+      "credentialPhrases": [
+        "pin kodu",
+        "şifreniz",
+        "kart numarası",
+        "hesabınızı doğrulayın",
+        "güvenlik kodu"
+      ],
+      "prizePhrases": [
+        "ödül kazandınız",
+        "ödülünüzü alın",
+        "kazanan sizsiniz"
+      ],
+      "weights": {
+        "urgency": 25,
+        "payment": 30,
+        "credential": 35,
+        "prize": 20
+      }
+    },
+    "sr": {
+      "urgencyPhrases": [
+        "hitno",
+        "odmah reagujte",
+        "vaš nalog će biti zatvoren",
+        "poslednje upozorenje",
+        "u roku od 24 sata"
+      ],
+      "paymentPhrases": [
+        "pošaljite novac",
+        "prenesite sredstva",
+        "platite odmah",
+        "naknada za obradu"
+      ],
+      "credentialPhrases": [
+        "pin kod",
+        "lozinka",
+        "broj kartice",
+        "potvrdite nalog",
+        "sigurnosni kod"
+      ],
+      "prizePhrases": [
+        "osvojili ste",
+        "preuzmite nagradu",
+        "dobitnik ste"
+      ],
+      "weights": {
+        "urgency": 25,
+        "payment": 30,
+        "credential": 35,
+        "prize": 20
+      }
+    },
+    "mk": {
+      "urgencyPhrases": [
+        "итно",
+        "дејствувајте веднаш",
+        "вашата сметка ќе биде затворена",
+        "последно предупредување",
+        "во рок од 24 часа"
+      ],
+      "paymentPhrases": [
+        "испратете пари",
+        "префрлете средства",
+        "платете веднаш",
+        "надомест за обработка"
+      ],
+      "credentialPhrases": [
+        "пин код",
+        "лозинка",
+        "број на картичка",
+        "потврдете ја сметката",
+        "безбедносен код"
+      ],
+      "prizePhrases": [
+        "добивте награда",
+        "подигнете ја наградата",
+        "вие сте добитник"
+      ],
+      "weights": {
+        "urgency": 25,
+        "payment": 30,
+        "credential": 35,
+        "prize": 20
+      }
+    },
+    "de": {
+      "urgencyPhrases": [
+        "dringend",
+        "jetzt handeln",
+        "ihr konto wird geschlossen",
+        "letzte warnung",
+        "innerhalb von 24 stunden"
+      ],
+      "paymentPhrases": [
+        "geld senden",
+        "geld überweisen",
+        "sofort bezahlen",
+        "bearbeitungsgebühr"
+      ],
+      "credentialPhrases": [
+        "pin-code",
+        "passwort",
+        "kartennummer",
+        "konto bestätigen",
+        "sicherheitscode"
+      ],
+      "prizePhrases": [
+        "sie haben gewonnen",
+        "gewinn abholen",
+        "als gewinner ausgewählt"
+      ],
+      "weights": {
+        "urgency": 25,
+        "payment": 30,
+        "credential": 35,
+        "prize": 20
+      }
+    },
+    "it": {
+      "urgencyPhrases": [
+        "urgente",
+        "agisci ora",
+        "il tuo account verrà chiuso",
+        "ultimo avviso",
+        "entro 24 ore"
+      ],
+      "paymentPhrases": [
+        "invia denaro",
+        "trasferisci fondi",
+        "paga immediatamente",
+        "commissione di elaborazione"
+      ],
+      "credentialPhrases": [
+        "codice pin",
+        "password",
+        "numero della carta",
+        "verifica il tuo account",
+        "codice di sicurezza"
+      ],
+      "prizePhrases": [
+        "hai vinto",
+        "ritira il tuo premio",
+        "selezionato come vincitore"
+      ],
+      "weights": {
+        "urgency": 25,
+        "payment": 30,
+        "credential": 35,
+        "prize": 20
+      }
+    },
+    "fr": {
+      "urgencyPhrases": [
+        "urgent",
+        "agissez maintenant",
+        "votre compte sera fermé",
+        "dernier avertissement",
+        "dans les 24 heures"
+      ],
+      "paymentPhrases": [
+        "envoyez de l'argent",
+        "transférez des fonds",
+        "payez immédiatement",
+        "frais de traitement"
+      ],
+      "credentialPhrases": [
+        "code pin",
+        "mot de passe",
+        "numéro de carte",
+        "vérifiez votre compte",
+        "code de sécurité"
+      ],
+      "prizePhrases": [
+        "vous avez gagné",
+        "réclamez votre prix",
+        "sélectionné comme gagnant"
+      ],
+      "weights": {
+        "urgency": 25,
+        "payment": 30,
+        "credential": 35,
+        "prize": 20
+      }
+    },
+    "ar": {
+      "urgencyPhrases": [
+        "عاجل",
+        "تصرف الآن",
+        "سيتم إغلاق حسابك",
+        "التحذير الأخير",
+        "خلال 24 ساعة"
+      ],
+      "paymentPhrases": [
+        "أرسل المال",
+        "حوّل الأموال",
+        "ادفع فوراً",
+        "رسوم المعالجة"
+      ],
+      "credentialPhrases": [
+        "الرقم السري",
+        "كلمة المرور",
+        "رقم البطاقة",
+        "تحقق من حسابك",
+        "رمز الأمان"
+      ],
+      "prizePhrases": [
+        "لقد ربحت",
+        "استلم جائزتك",
+        "تم اختيارك فائزاً"
+      ],
+      "weights": {
+        "urgency": 25,
+        "payment": 30,
+        "credential": 35,
+        "prize": 20
+      }
+    },
+    "ro": {
+      "urgencyPhrases": [
+        "urgent",
+        "acționați acum",
+        "contul va fi închis",
+        "ultimul avertisment",
+        "în 24 de ore"
+      ],
+      "paymentPhrases": [
+        "trimiteți bani",
+        "transferați fonduri",
+        "plătiți imediat",
+        "taxă de procesare"
+      ],
+      "credentialPhrases": [
+        "cod pin",
+        "parolă",
+        "numărul cardului",
+        "verificați contul",
+        "cod de securitate"
+      ],
+      "prizePhrases": [
+        "ați câștigat",
+        "revendicați premiul",
+        "selectat drept câștigător"
+      ],
+      "weights": {
+        "urgency": 25,
+        "payment": 30,
+        "credential": 35,
+        "prize": 20
+      }
+    }
+  }
+}

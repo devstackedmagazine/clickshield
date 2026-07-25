@@ -1,32 +1,65 @@
-# React + TypeScript + Vite
+# ClickShield
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+ClickShield is an Ionic/React and Capacitor app with a privacy-first scam and
+phishing analysis pipeline. The UI consumes one typed client service while all
+provider secrets stay inside the Vercel `/api/scan` function.
 
-Currently, two official plugins are available:
+## Logic entry points
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- `src/services/analysis/scanService.ts` — UI-facing `scan()` service
+- `src/services/analysis/localAnalyzer.ts` — offline deterministic analysis
+- `src/services/analysis/verdictPresentation.ts` — exact verdict/UI mapping
+- `src/services/guardian/guardianService.ts` — PIN-protected local policy
+- `src/services/history/historyService.ts` — SQLite history with web fallback
+- `src/services/history/historyLock.ts` — independent biometric/PIN history gate
+- `src/services/qr/qrService.ts` — camera/file QR decoding without auto-opening
+- `api/scan.ts` — stateless Vercel provider gateway
+- `src/types/analysis.ts` — stable UI/logic contracts
 
-## React Compiler
+The public scan API is:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```ts
+scan(
+  input: ScanInput,
+  language: SupportedLanguage,
+  onProgress?: (step: ScanStep) => void,
+): Promise<ScanResult>
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Local and Guardian blocklists run before any network request. When the device or
+providers are unavailable, the service returns a deterministic result marked
+with `isOfflineResult` or `isPartialResult`.
+
+## Environment
+
+Copy `.env.example` only as a reference. Put these secrets in Vercel project
+environment variables:
+
+- `AI_OPENROUTER_API_KEY`
+- `AI_GROQ_API_KEY`
+- `AI_GEMINI_API_KEY`
+- `VIRUSTOTAL_API_KEY`
+- `GOOGLE_WEB_RISK_API_KEY`
+
+The service degrades gracefully if one or more provider keys are absent.
+Provider calls are server-side only; no secret uses a `VITE_` prefix.
+
+For an Android build, set the non-secret `VITE_SCAN_API_URL` to the deployed
+Vercel origin. Web builds use same-origin `/api/scan` automatically.
+
+## Development
+
+```sh
+npm install
+npm run typecheck
+npm test
+npm run lint
+npm run build
+npx cap sync android
+```
+
+Native Android builds require JDK 21 (see `.java-version`). JDK 25 is not
+supported by the current Android Gradle toolchain.
+
+Use `?demo=scam`, `?demo=caution`, or `?demo=safe` for deterministic,
+provider-free demonstrations.
