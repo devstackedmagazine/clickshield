@@ -28,7 +28,7 @@ function Welcome() {
   const featuresRef = useRef<HTMLDivElement>(null);
 
   const handleGetStarted = () => {
-    history.push('/onboarding/permissions');
+    history.push('/onboarding/language');
   };
 
   const handleLearnMore = () => {

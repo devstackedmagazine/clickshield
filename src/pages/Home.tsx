@@ -1,84 +1,58 @@
-import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import {
-  IonButtons,
-  IonCard,
-  IonCardContent,
-  IonContent,
-  IonHeader,
-  IonIcon,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-} from '@ionic/react';
-import { cameraOutline, settingsOutline } from 'ionicons/icons';
-import type { LastScanSummary } from '../types/history';
+import { IonContent, IonHeader, IonIcon, IonPage, IonToolbar } from '@ionic/react';
+import { analyticsOutline, scanOutline, shieldCheckmarkOutline, shieldOutline, sparklesOutline } from 'ionicons/icons';
 import './Home.css';
-
-const RISK_EMOJI: Record<LastScanSummary['riskLevel'], string> = {
-  HIGH: '🔴',
-  MEDIUM: '🟡',
-  LOW: '🟢',
-};
-
-const RISK_LABEL: Record<LastScanSummary['riskLevel'], string> = {
-  HIGH: 'High Risk',
-  MEDIUM: 'Medium Risk',
-  LOW: 'Low Risk',
-};
 
 function Home() {
   const history = useHistory();
 
-  // Mock seed for now — will come from real scan history once storage/hooks land.
-  // Set to null to verify the card correctly disappears when no scan exists.
-  const [lastScan] = useState<LastScanSummary | null>({
-    riskLevel: 'LOW',
-    summary: 'Safe message',
-    time: '2h ago',
-  });
+  const handleStartScan = () => {
+    history.push('/tabs/scan');
+  };
 
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
-          <IonTitle className="home-title">🛡️ ClickShield</IonTitle>
-          <IonButtons slot="end">
-            <button
-              aria-label="Settings"
-              className="ion-activatable"
-              onClick={() => history.push('/tabs/settings')}
-              style={{ background: 'none', border: 'none', padding: '0 16px' }}
-            >
-              <IonIcon icon={settingsOutline} style={{ fontSize: '22px', color: 'var(--color-text-primary)' }} />
-            </button>
-          </IonButtons>
+        <IonToolbar className="home-header">
+          <div className="home-header-brand">
+            <IonIcon icon={shieldCheckmarkOutline} />
+            <span>ClickShield</span>
+          </div>
         </IonToolbar>
       </IonHeader>
-      <IonContent>
-        {lastScan && (
-          <IonCard className="home-last-scan-card">
-            <IonCardContent>
-              <div className="home-last-scan-row">
-                <span>{RISK_EMOJI[lastScan.riskLevel]}</span>
-                <span className="home-last-scan-level">{RISK_LABEL[lastScan.riskLevel]}</span>
-                <span className="home-last-scan-time">{lastScan.time}</span>
-              </div>
-              <p className="home-last-scan-summary">{lastScan.summary}</p>
-            </IonCardContent>
-          </IonCard>
-        )}
+      <IonContent className="home-content">
+        <div className="home-cyber-card">
+          <div className="home-cyber-square">
+            <IonIcon icon={analyticsOutline} />
+          </div>
+          <p className="home-cyber-label">CYBER ASSIST</p>
+        </div>
 
-        <div className="home-scan-area">
-          <button
-            className="home-scan-button"
-            aria-label="Scan"
-            onClick={() => history.push('/scan')}
-          >
-            <IonIcon icon={cameraOutline} />
-          </button>
-          <p className="home-scan-label">Tap to scan</p>
-          <p className="home-scan-hint">Upload, photograph or paste anything suspicious</p>
+        <h1 className="home-headline">Ready to Protect</h1>
+        <p className="home-subtitle">
+          Your digital environment is currently unmonitored. Scan a message, link, or QR code to
+          begin.
+        </p>
+
+        <button className="home-scan-button" onClick={handleStartScan}>
+          <IonIcon icon={scanOutline} />
+          <span>Start First Scan</span>
+        </button>
+        <p className="home-scan-supporting-text">
+          Scan for phishing, malware, and social engineering risks.
+        </p>
+
+        <div className="home-feature-grid">
+          <div className="home-feature-card">
+            <IonIcon icon={shieldOutline} />
+            <p className="home-feature-title">Privacy First</p>
+            <p className="home-feature-description">Data is processed</p>
+          </div>
+          <div className="home-feature-card">
+            <IonIcon icon={sparklesOutline} />
+            <p className="home-feature-title">AI Guard</p>
+            <p className="home-feature-description">Real-time threat</p>
+          </div>
         </div>
       </IonContent>
     </IonPage>
