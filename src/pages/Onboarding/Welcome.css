@@ -1,0 +1,153 @@
+.welcome-title {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.welcome-content {
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 16px;
+}
+
+.welcome-hero {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.welcome-hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.welcome-hero-badge {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border-radius: 999px;
+  padding: 6px 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.welcome-hero-badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-safe);
+}
+
+.welcome-hero-badge span {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.welcome-headline {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  text-align: center;
+  max-width: 300px;
+  margin: 0 auto 8px;
+}
+
+.welcome-subtitle {
+  font-size: 16px;
+  color: var(--color-text-secondary);
+  text-align: center;
+  max-width: 300px;
+  margin: 0 auto 24px;
+}
+
+.welcome-button-primary {
+  width: 100%;
+  height: 52px;
+  border-radius: 12px;
+  border: none;
+  background: var(--color-primary);
+  color: #ffffff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.welcome-button-primary ion-icon {
+  font-size: 20px;
+}
+
+.welcome-button-outline {
+  width: 100%;
+  height: 52px;
+  border-radius: 12px;
+  background: transparent;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+
+.welcome-feature-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.welcome-feature-card ion-icon {
+  font-size: 28px;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.welcome-feature-title {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--color-text-primary);
+  margin: 0 0 2px;
+}
+
+.welcome-feature-description {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.welcome-footer {
+  text-align: center;
+  padding: 24px 16px 32px;
+}
+
+.welcome-footer-copyright {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  margin: 0 0 8px;
+}
+
+.welcome-footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.welcome-footer-links button {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 12px;
+  color: var(--color-primary);
+  cursor: pointer;
+}

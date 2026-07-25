@@ -1,0 +1,85 @@
+.splash-screen {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  background: radial-gradient(ellipse at center, #e8eeff 0%, #c7d4f8 40%, #a5b8f5 100%);
+}
+
+.splash-logo-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(26, 86, 219, 0.15);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.splash-logo-card ion-icon {
+  font-size: 48px;
+  color: var(--color-primary);
+}
+
+.splash-logo-card-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 4px 0 0;
+}
+
+.splash-logo-card-tagline {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.splash-brand {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.splash-brand-name {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.splash-brand-tagline {
+  font-size: 16px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.splash-spacer {
+  flex: 1;
+}
+
+.splash-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 10px 20px;
+}
+
+.splash-badge ion-icon {
+  font-size: 16px;
+  color: var(--color-primary);
+}
+
+.splash-badge span {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  letter-spacing: 1px;
+}

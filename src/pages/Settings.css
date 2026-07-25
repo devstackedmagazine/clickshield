@@ -1,0 +1,154 @@
+.settings-header-dark {
+  --background: #1a1a2e;
+}
+
+.settings-header-dark-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+}
+
+.settings-header-dark-left ion-icon {
+  font-size: 20px;
+}
+
+.settings-header-dark-left span {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.settings-content {
+  --background: var(--color-background);
+}
+
+.settings-title-block {
+  padding: 16px;
+}
+
+.settings-page-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.settings-page-subtitle {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin: 4px 0 0;
+}
+
+.settings-section {
+  padding: 0 16px 24px;
+}
+
+.settings-section-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.settings-section-header ion-icon {
+  color: var(--color-primary);
+  font-size: 16px;
+}
+
+.settings-section-header span {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--color-primary);
+}
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 8px;
+}
+
+.settings-row-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.settings-row-icon ion-icon {
+  color: var(--color-text-secondary);
+  font-size: 24px;
+}
+
+.settings-row-text {
+  flex: 1;
+}
+
+.settings-row-title {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.settings-row-title.danger {
+  color: var(--color-danger);
+}
+
+.settings-row-icon.danger ion-icon {
+  color: var(--color-danger);
+}
+
+.settings-row-description {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  margin: 2px 0 0;
+}
+
+.settings-row-value {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.settings-row-tappable {
+  cursor: pointer;
+}
+
+.settings-row-select {
+  max-width: 110px;
+}
+
+.settings-offline-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  background: rgba(217, 119, 6, 0.08);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin: -4px 0 8px;
+}
+
+.settings-offline-banner ion-icon {
+  color: var(--color-warning);
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.settings-offline-banner span {
+  font-size: 12px;
+  color: var(--color-warning);
+}
+
+.settings-fab {
+  --background: var(--color-primary);
+}
