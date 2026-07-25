@@ -1,0 +1,32 @@
+.add-website-modal-content {
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 16px;
+}
+
+.add-website-modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 16px;
+}
+
+.add-website-modal-field {
+  margin-bottom: 16px;
+}
+
+.add-website-modal-submit-button {
+  width: 100%;
+  height: 48px;
+  border-radius: 12px;
+  border: none;
+  background: var(--color-primary);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.add-website-modal-error {
+  color: var(--color-danger);
+  font-size: 12px;
+  margin: -8px 0 12px;
+}

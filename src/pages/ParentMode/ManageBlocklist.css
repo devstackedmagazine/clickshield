@@ -1,0 +1,182 @@
+.blocklist-header-dark {
+  --background: #1a1a2e;
+}
+
+.blocklist-back-button {
+  background: none;
+  border: none;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+}
+
+.blocklist-back-button ion-icon {
+  font-size: 22px;
+}
+
+.blocklist-header-title {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 16px;
+  display: block;
+  text-align: center;
+}
+
+.blocklist-content {
+  --background: var(--color-background);
+  --padding-bottom: 96px;
+}
+
+.blocklist-searchbar {
+  margin: 12px 16px 0;
+  --background: #ffffff;
+  --border-radius: 12px;
+  padding: 0;
+}
+
+.blocklist-filter-pills {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  margin: 0 16px 12px;
+  padding-top: 12px;
+}
+
+.blocklist-filter-pill {
+  flex-shrink: 0;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.blocklist-filter-pill.active {
+  background: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+}
+
+.blocklist-list {
+  padding: 0 16px;
+}
+
+.blocklist-entry-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 8px;
+}
+
+.blocklist-favicon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.blocklist-favicon span {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+}
+
+.blocklist-entry-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.blocklist-entry-domain {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.blocklist-entry-meta {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  margin: 2px 0 0;
+}
+
+.blocklist-entry-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.blocklist-badge {
+  background: #fee2e2;
+  color: #991b1b;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.blocklist-menu-button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--color-text-secondary);
+}
+
+.blocklist-menu-button ion-icon {
+  font-size: 20px;
+}
+
+.blocklist-empty-state {
+  text-align: center;
+  padding: 48px 24px;
+}
+
+.blocklist-empty-state ion-icon {
+  font-size: 48px;
+  color: var(--color-text-secondary);
+}
+
+.blocklist-empty-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 16px 0 0;
+}
+
+.blocklist-empty-subtitle {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin: 4px 0 0;
+}
+
+.blocklist-fab-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: row-reverse;
+}
+
+.blocklist-fab-label {
+  background: var(--color-primary);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: none;
+  white-space: nowrap;
+}

@@ -31,6 +31,12 @@ import Welcome from './pages/Onboarding/Welcome';
 import Permissions from './pages/Onboarding/Permissions';
 import LanguageSelect from './pages/Onboarding/LanguageSelect';
 import SplashScreen from './pages/SplashScreen';
+import ParentModeDashboard from './pages/ParentMode/ParentModeDashboard';
+import ParentPinSetup from './pages/ParentMode/ParentPinSetup';
+import ManageBlocklist from './pages/ParentMode/ManageBlocklist';
+import LinkBlocked from './pages/ParentMode/LinkBlocked';
+import { FloatingButtonProvider } from './contexts/FloatingButtonContext';
+import FloatingButton from './components/FloatingButton/FloatingButton';
 import './App.css';
 
 interface TabIconProps {
@@ -90,17 +96,24 @@ function App() {
   return (
     <IonApp>
       <IonReactRouter>
-        <IonRouterOutlet>
-          <Route exact path="/result" component={Result} />
-          <Route exact path="/onboarding" component={Welcome} />
-          <Route exact path="/onboarding/permissions" component={Permissions} />
-          <Route exact path="/onboarding/language" component={LanguageSelect} />
-          <Route exact path="/splash" component={SplashScreen} />
-          <Route path="/tabs" component={Tabs} />
-          <Route exact path="/">
-            <Redirect to="/splash" />
-          </Route>
-        </IonRouterOutlet>
+        <FloatingButtonProvider>
+          <FloatingButton />
+          <IonRouterOutlet>
+            <Route exact path="/result" component={Result} />
+            <Route exact path="/onboarding" component={Welcome} />
+            <Route exact path="/onboarding/permissions" component={Permissions} />
+            <Route exact path="/onboarding/language" component={LanguageSelect} />
+            <Route exact path="/splash" component={SplashScreen} />
+            <Route exact path="/parent-mode" component={ParentModeDashboard} />
+            <Route exact path="/parent-pin-setup" component={ParentPinSetup} />
+            <Route exact path="/parent-blocklist" component={ManageBlocklist} />
+            <Route exact path="/link-blocked" component={LinkBlocked} />
+            <Route path="/tabs" component={Tabs} />
+            <Route exact path="/">
+              <Redirect to="/splash" />
+            </Route>
+          </IonRouterOutlet>
+        </FloatingButtonProvider>
       </IonReactRouter>
     </IonApp>
   );

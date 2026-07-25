@@ -1,0 +1,185 @@
+.pin-setup-header-dark {
+  --background: #1a1a2e;
+}
+
+.pin-setup-header-title {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.pin-setup-content {
+  --background: var(--color-background);
+  --padding-start: 16px;
+  --padding-end: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pin-setup-logo-card {
+  position: relative;
+  width: 120px;
+  height: 80px;
+  background: var(--color-surface);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 24px auto 0;
+}
+
+.pin-setup-logo-card ion-icon {
+  color: var(--color-primary);
+  font-size: 32px;
+}
+
+.pin-setup-logo-card span {
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--color-primary);
+}
+
+.pin-setup-close-button {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-surface);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pin-setup-close-button ion-icon {
+  font-size: 16px;
+  color: var(--color-text-secondary);
+}
+
+.pin-setup-step-indicator {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--color-primary);
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pin-setup-heading {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  text-align: center;
+  margin: 12px 0 0;
+}
+
+.pin-setup-subtitle {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  text-align: center;
+  max-width: 260px;
+  margin: 8px auto 0;
+}
+
+.pin-dots {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.pin-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  background: #ffffff;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.pin-dot.filled {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  transform: scale(1.1);
+}
+
+.pin-setup-spinner {
+  display: block;
+  margin: 0 auto;
+  width: 24px;
+  height: 24px;
+}
+
+.pin-setup-keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  max-width: 280px;
+  margin: 24px auto 0;
+}
+
+.pin-setup-keypad.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.pin-setup-key {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.pin-setup-key.fingerprint ion-icon {
+  color: var(--color-primary);
+  font-size: 28px;
+}
+
+.pin-setup-key.backspace ion-icon {
+  color: var(--color-text-secondary);
+  font-size: 24px;
+}
+
+.pin-setup-change-pin-link {
+  display: block;
+  margin: 16px auto 0;
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: 13px;
+  text-align: center;
+}
+
+.pin-setup-biometric-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  border-top: 1px solid var(--color-border);
+  margin-top: auto;
+}
+
+.pin-setup-biometric-row ion-icon {
+  color: var(--color-primary);
+  font-size: 20px;
+}
+
+.pin-setup-biometric-row span {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}

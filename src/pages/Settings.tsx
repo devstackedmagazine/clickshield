@@ -19,15 +19,19 @@ import {
   codeSlashOutline,
   colorPaletteOutline,
   documentTextOutline,
+  ellipseOutline,
   fingerPrintOutline,
   informationCircleOutline,
   languageOutline,
   moonOutline,
+  peopleOutline,
   scanOutline,
   settingsOutline,
   shieldOutline,
   trashOutline,
 } from 'ionicons/icons';
+import { useFloatingButton } from '../contexts/FloatingButtonContext';
+import { hasGuardianPin } from '../types/guardian';
 import './Settings.css';
 
 const APP_VERSION = '1.0.0';
@@ -66,6 +70,20 @@ function Settings() {
   );
   const [theme, setTheme] = useState<ThemeOption>(getStoredTheme);
   const [showClearHistoryAlert, setShowClearHistoryAlert] = useState(false);
+  const { isEnabled: floatingButtonEnabled, enable: enableFloatingButton, disable: disableFloatingButton } =
+    useFloatingButton();
+
+  const handleFloatingButtonToggle = (checked: boolean) => {
+    if (checked) {
+      enableFloatingButton();
+    } else {
+      disableFloatingButton();
+    }
+  };
+
+  const handleGuardianControlsTap = () => {
+    history.push(hasGuardianPin() ? '/parent-mode' : '/parent-pin-setup');
+  };
 
   const handleBiometricToggle = (checked: boolean) => {
     setBiometricEnabled(checked);
@@ -105,6 +123,17 @@ function Settings() {
             <span>SECURITY</span>
           </div>
 
+          <div className="settings-row settings-row-tappable" onClick={handleGuardianControlsTap}>
+            <div className="settings-row-icon blue">
+              <IonIcon icon={peopleOutline} />
+            </div>
+            <div className="settings-row-text">
+              <p className="settings-row-title">Guardian Controls</p>
+              <p className="settings-row-description">Manage blocked sites and family protection</p>
+            </div>
+            <IonIcon icon={chevronForward} style={{ color: 'var(--color-text-secondary)' }} />
+          </div>
+
           <div className="settings-row">
             <div className="settings-row-icon">
               <IonIcon icon={fingerPrintOutline} />
@@ -139,6 +168,32 @@ function Settings() {
               <IonIcon icon={informationCircleOutline} />
               <span>
                 Requires 6GB+ RAM and 4GB free storage. Download model in Offline Settings.
+              </span>
+            </div>
+          )}
+
+          <div className="settings-row">
+            <div className="settings-row-icon blue">
+              <IonIcon icon={ellipseOutline} />
+            </div>
+            <div className="settings-row-text">
+              <p className="settings-row-title">Floating Scan Button</p>
+              <p className="settings-row-description">
+                Quick access button that follows you in the app
+              </p>
+            </div>
+            <IonToggle
+              checked={floatingButtonEnabled}
+              onIonChange={(e) => handleFloatingButtonToggle(e.detail.checked)}
+              color="primary"
+            />
+          </div>
+          {floatingButtonEnabled && (
+            <div className="settings-floating-note">
+              <IonIcon icon={informationCircleOutline} />
+              <span>
+                System-wide overlay requires the Android app. In the browser, the button appears
+                within ClickShield only.
               </span>
             </div>
           )}

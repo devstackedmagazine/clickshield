@@ -1,31 +1,261 @@
-.scan-input-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+/* --- Tab selector --- */
+.scan-tab-selector {
+  display: flex;
+  background: #f3f4f6;
+  border-radius: 12px;
+  padding: 4px;
   margin-bottom: 16px;
 }
 
-.scan-input-card {
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
-  padding: 20px;
+.scan-tab-button {
+  flex: 1;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  background: var(--color-surface);
-  cursor: pointer;
+  gap: 6px;
+  padding: 10px 0;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  transition: all 0.2s ease;
 }
 
-.scan-input-card ion-icon {
-  font-size: 32px;
+.scan-tab-button ion-icon {
+  font-size: 16px;
+}
+
+.scan-tab-button.active {
+  background: #ffffff;
+  color: var(--color-primary);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+}
+
+/* --- Shared capture card --- */
+.scan-capture-card {
+  background: var(--color-surface);
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid var(--color-border);
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.scan-capture-card.dropzone {
+  border: 2px dashed var(--color-border);
+  padding: 32px;
+}
+
+.scan-capture-card ion-icon.scan-capture-icon {
+  font-size: 48px;
   color: var(--color-primary);
 }
 
-.scan-input-card span {
-  font-size: 14px;
+.scan-capture-title {
+  font-size: 15px;
+  font-weight: 700;
   color: var(--color-text-primary);
+  margin: 12px 0 0;
+}
+
+.scan-capture-subtitle {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  margin: 4px 0 0;
+}
+
+.scan-capture-button {
+  width: 100%;
+  height: 48px;
+  border-radius: 12px;
+  border: none;
+  background: var(--color-primary);
+  color: #ffffff;
+  font-weight: 700;
+  margin-top: 16px;
+}
+
+.scan-capture-button.outline {
+  height: 44px;
+  background: transparent;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* --- Image preview --- */
+.scan-preview-wrapper {
+  position: relative;
+}
+
+.scan-preview-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: contain;
+  border-radius: 12px;
+  display: block;
+}
+
+.scan-retake-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.scan-ready-badge {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: #ffffff;
+  border-radius: 999px;
+  padding: 4px 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.scan-ready-badge ion-icon {
+  color: var(--color-safe);
+  font-size: 14px;
+}
+
+.scan-ready-badge span {
+  color: var(--color-safe);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* --- Link tab --- */
+.scan-link-card {
+  background: var(--color-surface);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  margin-bottom: 16px;
+}
+
+.scan-link-input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 0 8px 0 0;
+}
+
+.scan-link-input-row.focused {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.1);
+}
+
+.scan-link-input-row ion-input {
+  --padding-start: 16px;
+  --padding-end: 8px;
+  --padding-top: 12px;
+  --padding-bottom: 12px;
+  font-size: 15px;
+  flex: 1;
+}
+
+.scan-link-input-row ion-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.scan-link-input-row ion-icon.valid {
+  color: var(--color-safe);
+}
+
+.scan-link-input-row ion-icon.invalid {
+  color: var(--color-warning);
+}
+
+.scan-link-hint {
+  font-size: 12px;
+  color: var(--color-warning);
+  margin: 6px 0 0;
+}
+
+.scan-chip-row {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  margin-top: 12px;
+}
+
+.scan-chip {
+  flex-shrink: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 13px;
+  white-space: nowrap;
+  color: var(--color-text-primary);
+}
+
+/* --- Collapsible text section --- */
+.scan-text-section {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-surface);
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.scan-text-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 16px;
+  cursor: pointer;
+}
+
+.scan-text-header ion-icon:first-child {
+  font-size: 18px;
+  color: var(--color-text-secondary);
+}
+
+.scan-text-header span {
+  flex: 1;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.scan-text-header ion-icon:last-child {
+  font-size: 16px;
+  color: var(--color-text-secondary);
+}
+
+.scan-text-body {
+  padding: 0 16px 16px;
+}
+
+.scan-paste-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(26, 86, 219, 0.08);
+  color: var(--color-primary);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 11px;
+  margin-bottom: 8px;
+}
+
+.scan-paste-chip ion-icon {
+  font-size: 13px;
 }
 
 .scan-textarea {
@@ -37,7 +267,13 @@
   --padding-end: 12px;
   --padding-top: 12px;
   --padding-bottom: 12px;
-  margin-bottom: 16px;
+}
+
+.scan-char-count {
+  text-align: right;
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  margin: 4px 0 0;
 }
 
 .scan-analyze-button {

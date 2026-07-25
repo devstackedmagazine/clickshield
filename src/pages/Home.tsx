@@ -12,6 +12,7 @@ import {
   shieldOutline,
 } from 'ionicons/icons';
 import VerdictBadge from '../components/shared/VerdictBadge';
+import { hasGuardianPin } from '../types/guardian';
 import type { HistoryVerdict, RecentActivityEntry } from '../types/history';
 import './Home.css';
 
@@ -34,6 +35,10 @@ function Home() {
   const history = useHistory();
 
   const goToScan = () => history.push('/tabs/scan');
+
+  const handleGuardianControlsTap = () => {
+    history.push(hasGuardianPin() ? '/parent-mode' : '/parent-pin-setup');
+  };
 
   return (
     <IonPage>
@@ -95,7 +100,7 @@ function Home() {
           <div className="home-guardian-illustration">
             <IonIcon icon={peopleOutline} />
           </div>
-          <button className="home-guardian-button" onClick={() => history.push('/tabs/settings')}>
+          <button className="home-guardian-button" onClick={handleGuardianControlsTap}>
             Manage Guardian Controls
           </button>
         </div>
